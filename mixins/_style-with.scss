@@ -1,0 +1,18 @@
+//  -------------------
+//  style with : mixins
+//  -------------------
+
+//  ------------------------------------------------------------------
+//  takes a Sass map of CSS-like props & values and returns valid CSS.
+//  ==================================================================
+//  @param {map} $styles - map of CSS-like props and values.
+//  ------------------------------------------------------------------
+@mixin style-with($styles) {
+  @if not $styles {
+    @warn 'No styles were defined';
+  }
+  
+  @each $style in $styles {
+    #{nth($style, 1)}: nth($style, 2);
+  }
+}
