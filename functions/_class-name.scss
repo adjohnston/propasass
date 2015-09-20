@@ -1,0 +1,16 @@
+//  ----------------------
+//  class name : functions
+//  ----------------------
+
+//  ---------------------------------------------------------------
+//  returns a class name
+//  ===============================================================
+//  @param {string} $prefix   - class prefix such as '--' from BEM.
+//  @param {string} $modifier - modifiers class name.
+//  ---------------------------------------------------------------
+@function class-name($prefix, $modifier) {
+  @if not $prefix   { $prefix: ''; }
+  @if not $modifier { $modifier: ''; }
+  
+  @return $prefix + $modifier;
+}
