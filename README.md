@@ -2,7 +2,7 @@
 
 The idea behind PropaSass is to abstract state and modifier styling from base classes, using JSON-like syntax using a Sass map. I am dubbing it SAMN or Sass Map Notation… pronounced salmon ;D
 
-I have written about it [here](https://medium.com/@adrjohnston/propasass-aaa0966efe1e) if you would like more of an information.
+I have written about it [here](https://medium.com/@adrjohnston/propasass-aaa0966efe1e) if you would like more  information.
 
 ##A Quick Demo
 I am going to use a simple button example to show off the syntax and how it can be applied:
