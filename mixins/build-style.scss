@@ -1,0 +1,3 @@
+@mixin _build-style($prop, $value) {
+  #{$prop}: $value;
+}
