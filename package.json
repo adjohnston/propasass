@@ -1,0 +1,5 @@
+{
+  "name": "propasass",
+  "version": "0.1.2",
+  "description": "A Frankenstein's monster, JSON-like syntax using a Sass map to modify CSS classes"
+}
