@@ -7,11 +7,23 @@ I have written about it [here](https://medium.com/@adrjohnston/propasass-aaa0966
 ##A Quick Demo
 I am going to use a simple button example to show off the syntax and how it can be applied:
 
-    $props: (
+    //  _button.scss
+
+    $btnProps: (
+      width: 150px,
+      height: 40px,
+      background: grey,
+      border: 1px solid darken(grey, 10%),
+      color: white,
+      display: inline-block,
+      vertical-align: bottom,
+    );
+
+    $btnModifyProps: (
       &: (
-        ':hover, :focus': (height: 38px, margin-top: 2px, background: darken(grey, 10%)),
+        ':hover, :focus': (height: (map-get($btnProps, height) - 2px), margin-top: 2px, background: darken(map-get($btnProps, background), 10%)),
         ':focus': (outline: none),
-        ':active': (height: 36px, margin-top: 4px)
+        ':active': (height: (map-get($btnProps, height) - 4px), margin-top: 4px)
       ),
       '--': (
         'primary': (background: blue, border-color: darken(blue, 10%)),
@@ -23,15 +35,29 @@ I am going to use a simple button example to show off the syntax and how it can 
         'active': (animation: glow infinite 3s)
       )
     );
+    
 
     .btn {
-      width: 150px;
-      height: 40px;
-      background: grey;
-      border: 1px solid darken(grey, 10%);
-      color: white;
-      display: inline-block;
-      vertical-align: bottom;
+      @include define-with($btnProps);
+      @include modify-with($btnModifyProps);
+    }
     
-      @include modify-with($props);
+    
+    //  _another-partial.scss
+    
+    $dialogProps: (
+      ...
+    );
+    
+    $dialogBtnProps: (
+      //  specific dialog button styles mixed
+    );
+    
+    
+    .dialog {
+      @include define-with($dialogProps);
+      
+      &__btn {
+        @include define-with(assign($btnProps, $dialogBtnProps));
+      }
     }
