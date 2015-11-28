@@ -1,0 +1,13 @@
+//  --------------------
+//  build style : mixins
+//  --------------------
+
+//  ------------------------------------------------------------------
+//  takes property and values as arguments and returns valid css. 
+//  ==================================================================
+//  @param {string} $prop  - a css property.
+//  @param {string} $value - a css value.
+//  ------------------------------------------------------------------
+@mixin build-style($prop, $value) {
+  #{$prop}: $value;
+}
