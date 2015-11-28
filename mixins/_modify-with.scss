@@ -8,15 +8,17 @@
 //  @params {map} $props - map of prefixes, modifier names and styles.
 //  ------------------------------------------------------------------
 @mixin modify-with($props) {
-  @if not $props {
-    @warn 'No props were defined';
-  }
-  
   @each $prefix, $modifiers in $props {
-    @each $modifier, $styles in $modifiers {
-      &#{class-name($prefix, $modifier)} {
-        @include style-with($styles);
+    @each $modifier, $declarations in $modifiers {
+      
+      &#{_class-name($prefix, $modifier)} {
+        @each $prop, $value in $declarations {
+    
+          @include _build-style($prop, $value);
+
+        }
       }
+      
     }
   }
 }
