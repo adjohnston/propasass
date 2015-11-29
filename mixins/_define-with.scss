@@ -9,8 +9,8 @@
 //  ------------------------------------------------------------------
 @mixin define-with($declarations) {
   @each $prop, $value in $declarations {
-    
-    @include _build-style($prop, $value);
-  
+
+    @include build-style($prop, $value);
+
   }
 };

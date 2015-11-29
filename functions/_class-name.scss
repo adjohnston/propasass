@@ -9,7 +9,8 @@
 //  @param {string} $modifier - modifiers class name.
 //  ---------------------------------------------------------------
 @function class-name($prefix, $modifier) {
-  @if not $prefix { $prefix: ''; }
-  
+  @if not $prefix   { $prefix:   ''; }
+  @if not $modifier { $modifier: ''; }
+
   @return $prefix + $modifier;
 }
