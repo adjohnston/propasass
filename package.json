@@ -1,5 +1,17 @@
 {
   "name": "propasass",
-  "version": "0.1.2",
-  "description": "A Frankenstein's monster, JSON-like syntax using a Sass map to modify CSS classes"
+  "version": "0.1.3",
+  "main": "propasass",
+  "description": "A Frankenstein's monster, JSON-like syntax using a Sass map to modify CSS classes",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adjohnston/propasass"
+  },
+
+  "files": [
+    "propasass.scss",
+    "functions",
+    "mixins"
+  ]
 }
