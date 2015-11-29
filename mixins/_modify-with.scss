@@ -10,15 +10,15 @@
 @mixin modify-with($props) {
   @each $prefix, $modifiers in $props {
     @each $modifier, $declarations in $modifiers {
-      
-      &#{_class-name($prefix, $modifier)} {
+
+      &#{class-name($prefix, $modifier)} {
         @each $prop, $value in $declarations {
-    
-          @include _build-style($prop, $value);
+
+          @include build-style($prop, $value);
 
         }
       }
-      
+
     }
   }
 }
