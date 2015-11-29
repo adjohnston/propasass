@@ -12,6 +12,8 @@
     @each $modifier, $declarations in $modifiers {
 
       &#{class-name($prefix, $modifier)} {
+        @content;
+        
         @each $prop, $value in $declarations {
 
           @include build-style($prop, $value);
